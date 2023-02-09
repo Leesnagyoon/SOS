@@ -162,12 +162,12 @@ public class ConditionEx {
 		//잘못 입력하셨습니다
 		Scanner sc = new Scanner(System.in);
 		
+		String result;
 		System.out.println("[놀이 기구 탑승제한 검사]");
 		System.out.print("나이 입력 :");
 		int age = sc.nextInt();
 		System.out.print("키 입력 : ");
 		Double he = sc.nextDouble();
-		String result;
 		// 1) 단순 버전(잘못 입력 하셨습니다 출력 안됨...)
 		/*if(age >=12 && he >=140.0) {
 			result ="탑승가능";}
@@ -186,14 +186,55 @@ public class ConditionEx {
 		
 		
 		
-		
-		
-		
-		
+	
+	
 		
 	}
 	
+	public void ex7() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("나이 입력 : ");
+		int age = sc.nextInt();
+		
+		String result;
+		
+		//나이를 입력 받자마자 검사
+		
+		if(age < 0 || age > 100) {
+			result = "잘못 입력 하셨습니다.";}
+		
+		else if (age <12) {
+			result = "적정 연령이 아닙니다";}
+		else { //else 내부에서는 age 가 정상 입력으로 판단됨
+		
+		
+			System.out.print("키 입력 :");
+			double he = sc.nextDouble();
+			
+			if(he <100|| he >220) {result ="잘못 입력하셨습니다";}
+			
+			else if(he<140) {result = " 적정 키가 아닙니다.";}
+			
+			else { result = "탑승가능";}
+			
+			
+		}System.out.println(result);
+		
+			
+	}
+}
+		
+			
+		
+		
+		
+		
+		
+		
+		
 	
 
+
 	
-}	
