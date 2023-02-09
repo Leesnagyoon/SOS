@@ -1,12 +1,1 @@
-.classpath
-.project
-.metadata/
-bin/
-.settings/
-*.class
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+/.metadata/
