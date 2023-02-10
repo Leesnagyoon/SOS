@@ -203,11 +203,7 @@ public class SwitchEx {
         	   }
         	   
         	   System.out.println(result);
-        	   
-        	   
-        	   
-        	   
-        	   
+  
            }
 
 
