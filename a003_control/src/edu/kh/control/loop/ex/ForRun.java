@@ -29,6 +29,14 @@ public class ForRun {
 		case 12 : fx.ex12();break;
 		case 13 : fx.ex13();break;
 		case 14 : fx.ex14();break;
+		case 15 : fx.ex15();break;
+		case 16 : fx.ex16();break;
+		case 17 : fx.ex17();break;
+		case 18 : fx.ex18();break;
+		case 19 : fx.ex19();break;
+		case 20 : fx.ex20();break;
+		case 21 : fx.ex21();break;
+		case 22 : fx.ex22();break;
 		
 	}
 	
