@@ -16,6 +16,10 @@ public static void main(String[] args) {
 			case 3 : fp.practice3();break;
 			case 4 : fp.practice4();break;
 			case 5 : fp.practice5();break;
+			case 6 : fp.practice6();break;
+			case 7 : fp.practice7();break;
+			case 8 : fp.practice8();break;
+			case 9 : fp.practice9();break;
 	}
 	
 }

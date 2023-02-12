@@ -101,17 +101,97 @@ public class ForPractice {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("숫자 입력 : ");
 		int input = sc.nextInt();
-		
-		for(int i =1;i<=input;i++) {
+		System.out.printf("======%s단=======\n",input);
+		for(int i =1;i<=9;i++) {
 			System.out.printf("%d * %d = %2d \n",input,i,input*i);
 			
 		}
 		
+	}
+	public void practice6() {
+		//사용자로부터 입력 받은 숫자의 단부터 9단까지 출력하세요.
+		//단 , 2~9 사이가 아닌 수를 입력하면 "2~9 사이 숫자만 입력해 주세요"를 출력하세요
+		//숫자 :	4          숫자 : 10
+		//===4단===         "2~9 사이 숫자만 입력해주세요.
+		//===5단===
+		//===6단===
+		//===7단===
+		//===8단===
+		//===9단===
+		Scanner sc = new Scanner(System.in);
+		System.out.print("숫자 : " );
+		int input = sc.nextInt();
+		if(input<=1 || input>9) {
+			System.out.print("2~9 사이 숫자만 입력해주세요.");
+		}else {
+		for(int x =input;input<=9;input++) {System.out.printf("==%s단== \n",input);
+		for(int i =1;i<=9;i++) {
+			System.out.printf("%d * %d =%2d \n",input,i,input*i);	
+		}
+		}
+		}
+	}
+	public void practice7() {
+		//다음과 같이 실행 예제를 구현하세요.
+		//ex.
+		//정수 입력 : 4
+		//*
+		//**
+		//***
+		//****
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
 		
+		int input = sc.nextInt();
+		String s = "*";
 		
+		for(int x =1;x<=input;x++) {
+			for(int i =1;i<=x;i++) {
+				System.out.print(s);
+		}
+		System.out.println();
+	}
+	}
+	public void practice8() {
+		//다음과 같이 실행 예제를 구현하세요.
+		//ex.
+		//정수 입력: 4
+		//****
+		//***
+		//**
+		//*
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		String s = "*";
 		
+		for(int x=input; x>=1; x--) {
+			for(int i=x; i>=1; i--) {
+				System.out.print(s);
+			}
+		System.out.println();
 		
+	}
 	}
 	
-	}
+	
+	public void practice9() {
+		//다음과 같은 실행 예제를 구현하세요
+		//    *
+		//   **
+		//  ***
+		// ****  
+         
+		for(int x=4; x>=1; x--) {
+			for(int i=x; i>=1; i--) {
+				System.out.print(" ");
+}             for(int a =x;a<=4;a++) {
+	             System.out.print("*");
+}
 
+			
+		System.out.println();
+	
+	}
+}
+}
