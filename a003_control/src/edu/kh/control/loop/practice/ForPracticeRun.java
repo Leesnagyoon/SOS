@@ -7,7 +7,9 @@ public static void main(String[] args) {
 	
 	ForPractice fp = new ForPractice();
 	Scanner sc = new Scanner(System.in);
+	
 	System.out.print("실행 할 예문 : ");
+	
 	int num = sc.nextInt();
 	
 	switch (num){
@@ -20,6 +22,9 @@ public static void main(String[] args) {
 			case 7 : fp.practice7();break;
 			case 8 : fp.practice8();break;
 			case 9 : fp.practice9();break;
+			case 10 : fp.practice10();break;
+			case 11 : fp.practice11();break;
+			case 12 : fp.practice12();break;
 	}
 	
 }
