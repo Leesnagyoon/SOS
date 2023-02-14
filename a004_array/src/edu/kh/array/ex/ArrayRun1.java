@@ -17,6 +17,9 @@ public static void main(String[] args) {
 	case 3 :ae1.ex3(); break;
 	case 4 :ae1.ex4(); break;
 	case 5 :ae1.ex5(); break;
+	case 6 :ae1.ex6(); break;
+	case 7 :ae1.ex7(); break;
+	case 8 :ae1.ex8(); break;
 	
 	}
 	
