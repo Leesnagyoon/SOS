@@ -22,7 +22,7 @@ public class Nation {
     String address; // 주소
     String phone; // 전화번호
     int age; // 나이 
-
+//멤버변수 / 클래스 변수 다 합쳐서 '필드(개체의 속성을 적는 영역)'라고 부름
     
     
     /* 기능(==method )*/
