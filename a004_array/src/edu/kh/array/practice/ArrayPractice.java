@@ -1,5 +1,6 @@
 package edu.kh.array.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.text.html.CSS;
@@ -410,10 +411,49 @@ public class ArrayPractice {
 	   //단, 사용자에게 배열에 값을 더 넣을지 물어보고 몇 개를 더 입력할 건지,
 	   //늘린 곳에 어떤 데이터를 넣을 것인지 받으세요.
 	   //사용자가 더 이상 입력하지 않겠다고 하면 배열 전체 값을 출력하세요.
-	   
-	   
-	   
-	   
+	 Scanner sc = new Scanner(System.in);
+	 //1. 첫 배열 크기 지정
+	 System.out.print("배열의 크기를 입력하시오 : ");
+	 int size = sc.nextInt(); // 입력 버퍼에 개행문자가 남음
+	 sc.nextLine(); // 입력 버퍼에 남은 개행문자 제거
+	 
+	 //2. 첫 배열 생성
+	 String[] books = new String[size];
+	 //3. 첫 배열에 저장할 문자열 입력 받기
+	 for(int i = 0; i<books.length;i++) {
+		 System.out.print((i+1)+"번째 문자열 : ");
+		 books[i] = sc.nextLine(); // 입력 버퍼에서 다음 엔터까지 읽어옴
+		 
+	 }
+	 //4. n이 입력될 때 까지 무한 반복 -> n입력시 break;
+	 while(true) {
+		 System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+		 char ch = sc.nextLine().charAt(0);
+		 
+		 if(ch=='N') {
+			 break;
+		 }
+		 //5. 더 입력 받을 개수 입력
+		 System.out.println("더 입력하고 싶은 개수 : ");
+		 int addSize = sc.nextInt();
+		 sc.nextLine(); // 입력 버퍼에 남은 개행문자(엔터) 제거
+		 // 6. 기존 배열보다 늘어난 개수만큼 큰 새 배열 생성
+		 String newBooks[] = new String[books.length+addSize];
+		 // 7. 깊은 복사를 통해 기존 배열 내용을 새 배열로 복사
+		 System.arraycopy(books, 0, newBooks, 0, books.length);
+		 // 8. 새 배열의 빈칸 부터 새로운 입력을 받아서 저장
+		 for(int i=books.length ; i<newBooks.length ; i++) {
+			 System.out.print((i+1)+ "번째 문자열 : ");
+			 newBooks[i] = sc.nextLine();
+			 
+		 }
+		 // 9. 기존 참조배열 books에 newBooks의 주소를 얕은 복사 
+		 books = newBooks;
+		 
+	 } // while 종료
+	 
+	 //10. 배열에 저장된 모든 값을 출력
+	 System.out.println(Arrays.toString(books));
 	   
 	   
 	   
