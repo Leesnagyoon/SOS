@@ -1,6 +1,7 @@
 package edu.kh.array.practice;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.swing.text.html.CSS;
@@ -383,7 +384,7 @@ public class ArrayPractice {
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = str.charAt(i);
 		}
-        System.out.print("문자열에 있는 문자 : ");
+		System.out.print("문자열에 있는 문자 : ");
 		for (int i = 0; i < arr.length; i++) {
 			boolean flag = false;
 
@@ -401,62 +402,97 @@ public class ArrayPractice {
 				}
 			}
 
-		}  
-		System.out.println("\n문자 개수 :"+count);
+		}
+		System.out.println("\n문자 개수 :" + count);
 
 	}
-   public void ex14() {
-	   //사용자가 입력한 배열의 길이만큼의 String 배열을 선언 및 할당하고
-	   //배열의 인덱스에 넣을 값 역시 사용자가 입력하여 초기화 하세요.
-	   //단, 사용자에게 배열에 값을 더 넣을지 물어보고 몇 개를 더 입력할 건지,
-	   //늘린 곳에 어떤 데이터를 넣을 것인지 받으세요.
-	   //사용자가 더 이상 입력하지 않겠다고 하면 배열 전체 값을 출력하세요.
-	 Scanner sc = new Scanner(System.in);
-	 //1. 첫 배열 크기 지정
-	 System.out.print("배열의 크기를 입력하시오 : ");
-	 int size = sc.nextInt(); // 입력 버퍼에 개행문자가 남음
-	 sc.nextLine(); // 입력 버퍼에 남은 개행문자 제거
-	 
-	 //2. 첫 배열 생성
-	 String[] books = new String[size];
-	 //3. 첫 배열에 저장할 문자열 입력 받기
-	 for(int i = 0; i<books.length;i++) {
-		 System.out.print((i+1)+"번째 문자열 : ");
-		 books[i] = sc.nextLine(); // 입력 버퍼에서 다음 엔터까지 읽어옴
-		 
-	 }
-	 //4. n이 입력될 때 까지 무한 반복 -> n입력시 break;
-	 while(true) {
-		 System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
-		 char ch = sc.nextLine().charAt(0);
-		 
-		 if(ch=='N') {
-			 break;
-		 }
-		 //5. 더 입력 받을 개수 입력
-		 System.out.println("더 입력하고 싶은 개수 : ");
-		 int addSize = sc.nextInt();
-		 sc.nextLine(); // 입력 버퍼에 남은 개행문자(엔터) 제거
-		 // 6. 기존 배열보다 늘어난 개수만큼 큰 새 배열 생성
-		 String newBooks[] = new String[books.length+addSize];
-		 // 7. 깊은 복사를 통해 기존 배열 내용을 새 배열로 복사
-		 System.arraycopy(books, 0, newBooks, 0, books.length);
-		 // 8. 새 배열의 빈칸 부터 새로운 입력을 받아서 저장
-		 for(int i=books.length ; i<newBooks.length ; i++) {
-			 System.out.print((i+1)+ "번째 문자열 : ");
-			 newBooks[i] = sc.nextLine();
-			 
-		 }
-		 // 9. 기존 참조배열 books에 newBooks의 주소를 얕은 복사 
-		 books = newBooks;
-		 
-	 } // while 종료
-	 
-	 //10. 배열에 저장된 모든 값을 출력
-	 System.out.println(Arrays.toString(books));
-	   
-	   
-	   
-	   
-   }
+
+	public void ex14() {
+		// 사용자가 입력한 배열의 길이만큼의 String 배열을 선언 및 할당하고
+		// 배열의 인덱스에 넣을 값 역시 사용자가 입력하여 초기화 하세요.
+		// 단, 사용자에게 배열에 값을 더 넣을지 물어보고 몇 개를 더 입력할 건지,
+		// 늘린 곳에 어떤 데이터를 넣을 것인지 받으세요.
+		// 사용자가 더 이상 입력하지 않겠다고 하면 배열 전체 값을 출력하세요.
+		Scanner sc = new Scanner(System.in);
+		// 1. 첫 배열 크기 지정
+		System.out.print("배열의 크기를 입력하시오 : ");
+		int size = sc.nextInt(); // 입력 버퍼에 개행문자가 남음
+		sc.nextLine(); // 입력 버퍼에 남은 개행문자 제거
+
+		// 2. 첫 배열 생성
+		String[] books = new String[size];
+		// 3. 첫 배열에 저장할 문자열 입력 받기
+		for (int i = 0; i < books.length; i++) {
+			System.out.print((i + 1) + "번째 문자열 : ");
+			books[i] = sc.nextLine(); // 입력 버퍼에서 다음 엔터까지 읽어옴
+
+		}
+		// 4. n이 입력될 때 까지 무한 반복 -> n입력시 break;
+		while (true) {
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.nextLine().charAt(0);
+
+			if (ch == 'N') {
+				break;
+			}
+			// 5. 더 입력 받을 개수 입력
+			System.out.println("더 입력하고 싶은 개수 : ");
+			int addSize = sc.nextInt();
+			sc.nextLine(); // 입력 버퍼에 남은 개행문자(엔터) 제거
+			// 6. 기존 배열보다 늘어난 개수만큼 큰 새 배열 생성
+			String newBooks[] = new String[books.length + addSize];
+			// 7. 깊은 복사를 통해 기존 배열 내용을 새 배열로 복사
+			System.arraycopy(books, 0, newBooks, 0, books.length);
+			// 8. 새 배열의 빈칸 부터 새로운 입력을 받아서 저장
+			for (int i = books.length; i < newBooks.length; i++) {
+				System.out.print((i + 1) + "번째 문자열 : ");
+				newBooks[i] = sc.nextLine();
+
+			}
+			// 9. 기존 참조배열 books에 newBooks의 주소를 얕은 복사
+			books = newBooks;
+
+		} // while 종료
+
+		// 10. 배열에 저장된 모든 값을 출력
+		System.out.println(Arrays.toString(books));
+
+	}
+
+	public void ex18() {
+		// 4행 4열 2차원 배열을 생성하여 0행 0열부터 2행 2열까지는 1~10까지의 임의의 정수값 저장 후
+		// 아래의 내용처럼 처리하세요
+		// 실행화면
+		// 9 3 7 19
+		// 3 6 9 18
+		// 6 10 10 26
+		// 18 19 26 63
+
+		// 1. 4행 4열 2차원 배열 생성
+		int[][] arr = new int[4][4];
+
+		final int LAST_ROW_INDEX = arr.length - 1;// 행 마지막 인덱스
+		final int LAST_COL_INDEX = arr[0].length - 1;// 열 마지막 인덱스
+		// 2. 0행 0열` 2행 2열까지 1~10 사이 난수 대입
+		Random random = new Random();
+		// random.nextInt(); 0이상 1미만 정수
+		for (int row = 0; row < LAST_ROW_INDEX; row++) {
+			for (int col = 0; col < LAST_COL_INDEX; col++) {
+
+				arr[row][col] = (random.nextInt(10)) + 1;
+				// 3행 3열에 발생된 난수 모두 누적
+				arr[LAST_ROW_INDEX][LAST_COL_INDEX] += arr[row][col];
+				// 난수 대입과 동시에 해당 행 열의 끝에 누적 
+				arr[row][LAST_COL_INDEX] += arr[row][col];
+				arr[LAST_ROW_INDEX][col] += arr[row][col];
+				
+			}
+		}
+		// 출력용 2중 for문
+		for (int row = 0; row <= LAST_ROW_INDEX; row++) {
+			for (int col = 0; col <= LAST_COL_INDEX; col++) {
+				System.out.printf("%3d", arr[row][col]);
+			}System.out.println();
+		}
+	}
 }

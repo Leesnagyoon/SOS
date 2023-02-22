@@ -26,6 +26,7 @@ public class ArrayPracticeRun {
 		case 12 : ap.ex12();break;
 		case 13 : ap.ex13();break;
 		case 14 : ap.ex14();break;
+		case 18 : ap.ex18();break;
 		
 		
 		}

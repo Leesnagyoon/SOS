@@ -20,6 +20,8 @@ public static void main(String[] args) {
 	System.out.println(c1.getMoney());
 	System.out.println(c1.getLastName());
 	
+	
+	//메서드 오버라이딩 시 자식이 우선 순위를 가지게 된다!
 	System.out.println(c2.getMoney());
 	System.out.println(c2.getLastName());
 	//-> 부모의 메서드 상속 확인
@@ -32,6 +34,9 @@ public static void main(String[] args) {
 	// 자식 모두에게 적용된다(공통적인 규약 , 유지보수성 향상)
 	
 	
+	System.out.println("--------------------------");
+	//toString() : 객체가 가지고 있는 필드를 하나의 문자열로 만들어서 반환
+	System.out.println(c1.toString());
 	
 	
 }
