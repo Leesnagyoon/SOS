@@ -14,6 +14,7 @@ public class LightCar extends Car{
 		
 		this.discountOffer = discountOffer;
 	}
+	//alt + shift + r
 	public double getDiscountOffer() {
 		return discountOffer;
 	}

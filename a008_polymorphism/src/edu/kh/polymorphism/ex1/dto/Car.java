@@ -13,7 +13,6 @@ public class Car {
 	}
 	//매개 변수 생성자
 	//alt + shift + s -> o 
-
 	public Car(int wheel, int seat, String fuel) {
 		super();
 		this.wheel = wheel;
@@ -21,6 +20,7 @@ public class Car {
 		this.fuel = fuel;
 	}
 	//alt + shift + s -> r
+	//getter / setter 
 
 	public int getWheel() {
 		return wheel;
