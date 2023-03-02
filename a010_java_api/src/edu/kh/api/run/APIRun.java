@@ -1,0 +1,18 @@
+package edu.kh.api.run;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import edu.kh.api.service.APIService;
+import edu.kh.api.view.APIView;
+
+public class APIRun {
+	public static void main(String[] args) {
+
+		APIView view = new APIView();
+
+		
+		view.displayMenu();
+
+}
+}

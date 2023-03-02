@@ -9,6 +9,6 @@ public static void main(String[] args) throws IOException {
 	
 	ExceptionService service = new ExceptionService();
 	
-	service.ex3();
+	service.startEx5();
 }
 }
