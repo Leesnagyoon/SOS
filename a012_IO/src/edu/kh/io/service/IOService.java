@@ -36,10 +36,10 @@ public class IOService {
 	public void byteOutPut() {
 		// 바이트 기반 출력
 
-		FileOutputStream fos = null;
+		
 		// 스트림 참조 변수 선언을 try 전에 한 이유
 		// -> finally 에서도 해당 참조 변수를 사용할 수 있게 하려고
-
+		FileOutputStream fos = null;
 		try {
 			fos = new FileOutputStream("byte/byteTest.txt");
 			// 상대경로 기준 == 프로젝트 폴더 내부
@@ -165,6 +165,7 @@ public class IOService {
 		FileReader fr = null;
 
 		try {
+			
 			fr = new FileReader("char/charTest.txt");
 
 			int value = 0; // 파일에서 문자를 하나씩 읽어와 저장
@@ -298,7 +299,7 @@ public class IOService {
 
 			Student s = (Student) ois.readObject();
 			// readObject() : 직렬화된 객체 데이터를 읽어와
-			// 역직렬화 시켜 정상적인 객체형태로 반환
+			//                역직렬화 시켜 정상적인 객체형태로 반환
 
 			System.out.println(s);
 

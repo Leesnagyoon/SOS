@@ -9,13 +9,13 @@ public class IORun {
 		
 //		service.byteOutPut();
 //		service.charOutput();
-//		service.byteInput();
+		service.byteInput();
 //		service.charInput();
 //		service.fileCopy();
 //		service.objectOutput();
 //		service.objectInput();
 //		service.listOutput();
-		service.listInput();
+//		service.listInput();
 	}
 
 }

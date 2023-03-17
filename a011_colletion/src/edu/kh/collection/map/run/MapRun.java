@@ -7,6 +7,6 @@ public static void main(String[] args) {
 	
 	MapService service = new MapService();
 	
-	service.ex2();
+	service.ex1();
 }
 }

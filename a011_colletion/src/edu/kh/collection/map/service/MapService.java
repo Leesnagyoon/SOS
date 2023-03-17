@@ -16,7 +16,7 @@ public class MapService {
 		 * 
 		 * -key만 모아서 봤을 때 Set의 특징을 지님 --> 중복 X , 순서 유지 X
 		 * 
-		 * -Value 만 모아서 봤을 때 --> key 로 인해서 값이 구분됙 ㅣ때문에 중복 허영 (List의 특징을 지님)
+		 * -Value 만 모아서 봤을 때 --> key 로 인해서 값이 구분되기때문에 중복 허용 (List의 특징을 지님)
 		 * 
 		 * 
 		 * 
