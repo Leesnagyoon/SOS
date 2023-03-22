@@ -430,7 +430,7 @@ SELECT * FROM USER_USED_FK;
 -- * FOREIGN KEY 삭제 옵션 
 -- 부모 테이블의 데이터 삭제 시 자식 테이블의 데이터를 
 -- 어떤식으로 처리할 지에 대한 내용을 설정할 수 있다.
-
+ 
 SELECT * FROM USER_GRADE;
 SELECT * FROM USER_USED_FK;
 
@@ -628,8 +628,7 @@ COMMENT ON COLUMN USER_TEST.PHONE IS '연락처';
 COMMENT ON COLUMN USER_TEST.ADDRESS IS '주소';
 COMMENT ON COLUMN USER_TEST.STATUS IS '탈퇴여부';
 
-INSERT INTO USER_TEST
-VALUES();
+
 
 
 

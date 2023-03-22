@@ -113,7 +113,7 @@ FROM EMPLOYEE;
 
 --<DISTINCT> (별개의,따로따로)
 --> 조회 시 지정된 컬럼에 중복 값을 한 번만 표시할 때 사용
-
+SELECT DEPT_CODE FROM EMPLOYEE;
 SELECT DISTINCT DEPT_CODE FROM EMPLOYEE;
 
 --------------------------------------------------
@@ -146,6 +146,10 @@ WHERE SALARY * 12 <= 50000000;
 SELECT EMP_ID 사번,EMP_NAME 이름, DEPT_CODE 부서코드,PHONE 전화번호 
 FROM EMPLOYEE
 WHERE DEPT_CODE <> 'D9';
+-- <> == != 
+SELECT EMP_ID 사번,EMP_NAME 이름, DEPT_CODE 부서코드, PHONE 전화번호
+FROM EMPLOYEE
+WHERE DEPT_CODE != 'D9';
 
 --EMPLOYEE 테이블에서 부서코드가 'D6'이고
 --급여가 200만 이상인 사원의 

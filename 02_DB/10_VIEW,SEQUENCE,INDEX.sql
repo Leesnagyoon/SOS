@@ -53,7 +53,7 @@ AS (SELECT EMP_ID,EMP_NAME,DEPT_TITLE,JOB_NAME
 -- SYS계정으로 접속
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
    
--- 각자 게정에 CREATE VIEW 권한 부여
+-- 각자 계정에 CREATE VIEW 권한 부여
 GRANT CREATE VIEW TO kh_lsyun;
 -- 다시 KH 계정으로 접속해서 VIEW 생성 구문 수행
 
