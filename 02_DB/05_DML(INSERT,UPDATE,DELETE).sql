@@ -186,6 +186,10 @@ WHERE EMP_NAME IN ('노옹철', '전형돈', '정중하', '하동운');
 UPDATE EMPLOYEE2
 SET (SALARY, BONUS) = (SELECT SALARY, BONUS
                        FROM EMPLOYEE2
+                       
+                       
+                       
+                       
                        WHERE EMP_NAME = '유재식')
 WHERE EMP_NAME IN ('노옹철', '전형돈', '정중하', '하동운');
 

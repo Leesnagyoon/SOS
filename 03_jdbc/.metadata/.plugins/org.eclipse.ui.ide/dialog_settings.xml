@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\home_workspace\jdbc_homework\EmployeeManagement"/>
 			<item value="C:\Users\user\git\SOS\01_java\a001_variable"/>
 			<item value="C:\Users\user\git\SOS\01_java\a002_operator"/>
 			<item value="C:\Users\user\git\SOS\01_java\a002_operator\src\edu\kh\operator\ex"/>

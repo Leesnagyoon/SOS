@@ -172,6 +172,27 @@ public class EmployeeService {
 		
 		return result;
 	}
+
+	/** 사번으로 사원 정보 삭제
+	 * @param input
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteEmp(int input) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteEmp(conn, input);
+		
+		if(result > 0) commit(conn);
+		
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		
+		return result;
+	}
 	
 	
 }

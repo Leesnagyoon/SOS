@@ -2,13 +2,18 @@ package edu.kh.jdbc.model.dao;
 
 import static edu.kh.jdbc.common.JDBCTemplate.*;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.InvalidPropertiesFormatException;
 import java.util.List;
+import java.util.Properties;
 
 import edu.kh.jdbc.common.JDBCTemplate;
 import edu.kh.jdbc.model.dto.Employee;
@@ -24,6 +29,20 @@ public class EmployeeDAO {
 	private ResultSet rs;
 	
 	private PreparedStatement pstmt;
+	private Properties prop;
+	
+	public EmployeeDAO() {
+		
+		prop = new Properties();
+		
+		try {
+			prop.loadFromXML(new FileInputStream("employee-sql.xml"));
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	// Prepared : 준비된 
 	// -> 외부 변수(값)를 SQL에 삽입할 준비가 된 Statement
 	
@@ -388,4 +407,49 @@ public class EmployeeDAO {
 		
 		return result;
 	}
+
+	/** 사원 정보를 삭제하는 SQL구문 실행
+	 * @param conn
+	 * @param input
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteEmp(Connection conn, int input) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("deleteEmpId");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, input);
+			
+			result = pstmt.executeUpdate();
+			
+			
+			
+		} finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

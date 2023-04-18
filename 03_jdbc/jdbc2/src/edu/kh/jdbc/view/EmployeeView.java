@@ -57,7 +57,7 @@ public class EmployeeView {
     			case 5 : insertEmployee(); break;
     			case 6 : updateEmployee(); break;
     			case 7 : retireEmployee(); break;
-    			case 8 : break;
+    			case 8 : deleteEmp(); break;
     			case 0 : System.out.println("\n[프로그램을 종료합니다] \n"); break;
     			default : System.out.println("\n[메뉴에 존재하는 번호를 입력하세요] \n"); 
     			}
@@ -73,7 +73,45 @@ public class EmployeeView {
     	 
      }
      
-     /**
+     private void deleteEmp() {
+    	 
+    	 System.out.println("\n--------- 사원 정보 삭제 -----------\n");
+    	 
+    	 System.out.print("사번 입력 : ");
+    	 int input = sc.nextInt();
+    	 sc.nextLine();
+    	 
+    	 try {
+			int result = service.deleteEmp(input);
+			
+			System.out.print("\n[정말 삭제 하시겠습니까?(N/Y)] : \n");
+			char ny = sc.next().toUpperCase().charAt(0);
+			sc.nextLine();
+			
+			if( ny == 'N' ) {
+				System.out.println("\n[취소 되었습니다.]\n");
+			}
+			
+			if(ny != 'Y') {
+				System.out.println("Y/N 만 입력하여 주세요");
+			}
+			
+			System.out.println("\n[삭제 되었습니다.]\n");
+			
+			
+			
+			
+		} catch (Exception e) {
+			
+			System.out.println("\n** 사원 정보 삭제 중 예외 발생 **\n");
+			e.printStackTrace();
+		} 
+    	 
+    	 
+		
+	}
+
+	/**
      * 전체 사원 조회
      */
     private void selectAll() {
